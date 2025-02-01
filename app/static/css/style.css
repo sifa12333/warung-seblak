@@ -1,0 +1,57 @@
+/* ===== Styling Section Pemesanan ===== */
+#book-a-table {
+    background: #f8f9fa; /* Warna background soft */
+    padding: 60px 0;
+}
+
+/* ===== Styling untuk Form ===== */
+.reservation-form-bg {
+    background: rgba(255, 255, 255, 0.9); /* Transparan putih */
+    padding: 30px;
+    border-radius: 10px; /* Membuat sudut rounded */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Input Form Style ===== */
+.reservation-form-bg input,
+.reservation-form-bg textarea {
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.reservation-form-bg input:focus,
+.reservation-form-bg textarea:focus {
+    border-color: #ff4d4d; /* Warna merah saat focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+}
+
+/* ===== Styling Tombol Submit ===== */
+.btn-primary {
+    background-color: #ff4d4d; /* Warna merah */
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    justify-content: center;
+    display: flex;
+}
+
+.btn-primary:hover {
+    background-color: #e63939; /* Warna merah lebih gelap */
+    transform: scale(1.05);
+}
+
+/* ===== Styling Gambar di Samping Form ===== */
+.reservation-img {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    min-height: 400px;
+}

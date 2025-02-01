@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Pesanan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<section id="book-a-table" class="book-a-table section">
+    <div class="container text-center my-4" data-aos="fade-up">
+        <h2>Buat Pesanan</h2>
+        <p><span>Catat menu yang kamu inginkan</span> <span class="description-title text-danger">Disini<br></span></p>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 reservation-img"
+                 style="background-image: url('{{ url_for('static', filename='img/order.webp') }}'); background-size: cover; background-position: center; height: 100%; min-height: 450px;">
+            </div>
+
+            <div class="col-lg-8 d-flex align-items-center p-4 reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                <form id="orderForm" action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <input type="text" name="name" class="form-control" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Email Anda" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="phone" class="form-control" placeholder="Nomor HP" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" name="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="time" name="time" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="number" name="people" class="form-control" placeholder="Jumlah Orang" required>
+                        </div>
+                    </div>
+                        <div class="form-group mt-3">
+                            <label>Pesanan Anda:</label>
+                            <ul id="orderList"></ul>
+                        </div>
+                    
+                        <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            let orderList = JSON.parse(localStorage.getItem("orderList")) || [];
+                            let orderListContainer = document.getElementById("orderList");
+                        
+                            if (orderList.length === 0) {
+                                orderListContainer.innerHTML = "<li>Belum ada pesanan</li>";
+                            } else {
+                                orderList.forEach(item => {
+                                    let li = document.createElement("li");
+                                    li.innerText = `${item.name} - ${item.price}`;
+                                    orderListContainer.appendChild(li);
+                                });
+                            }
+                        });
+                        </script>
+
+                        <div class="form-group mt-3">
+                            <label>Total Harga:</label>
+                            <p id="totalPrice">Rp 0</p>
+                        </div>
+
+                        <div class="text-center mt-3">
+                        <div class="btn-container">
+                            <button type="button" class="btn btn-primary" id="orderButton" >
+                                Buat Pesanan
+                            </button>
+                        </div>
+
+                        <script>
+                            document.getElementById("orderButton").addEventListener("click", function() {
+                                let name = document.querySelector("[name='name']").value.trim();
+                                let email = document.querySelector("[name='email']").value.trim();
+                                let phone = document.querySelector("[name='phone']").value.trim();
+                                let date = document.querySelector("[name='date']").value;
+                                let time = document.querySelector("[name='time']").value;
+                                let people = document.querySelector("[name='people']").value;
+
+                                if (!name || !email || !phone || !date || !time || !people) {
+                                    alert("Silakan isi semua data terlebih dahulu sebelum membuat pesanan!");
+                                    return; // Stop fungsi agar modal tidak muncul
+                                }
+
+                                // Jika validasi berhasil, baru tampilkan modal
+                                let orderModal = new bootstrap.Modal(document.getElementById('orderModal'));
+                                orderModal.show();
+                            });
+                            </script>
+
+                        <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            let orderList = JSON.parse(localStorage.getItem("orderList")) || [];
+                            let totalPriceElement = document.getElementById("totalPrice");
+
+                            let total = orderList.reduce((sum, item) => sum + parseInt(item.price.replace("Rp.", "").replace(",", "").trim()), 0);
+                            totalPriceElement.innerText = "Rp " + total.toLocaleString("id-ID");
+                        });
+                        </script>
+
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Pesanan Berhasil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Terima kasih! Pesanan Anda telah dikirim.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="showPaymentInfo()">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!-- Informasi Pembayaran dan Pengambilan -->
+<div id="payment-info" class="container text-center mt-4 d-none">
+    <div class="alert alert-success">
+        <h4>Terima kasih atas pesanan Anda!</h4>
+        <p>Pesanan bisa diambil langsung ke warung kami yaa, kalian juga bisa melakukan pembayaran saat mengambil pesanan.</p>
+        <p>Hubungi kami di: <a href="https://wa.me/083822450845" target="_blank" class="fw-bold">+62 83822450845</a> jika ada pertanyaan lebih lanjut.</p>
+        <h5>Klik OK untuk menyelesaikan pesanan Anda.</h5>
+        <div class="text-center mt-3">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal" onclick="clearOrder()">OK</button>
+                                        
+            <script>
+                function clearOrder() {
+                    console.log("Menghapus pesanan..."); // Debugging, pastikan fungsi dipanggil
+                
+                    localStorage.removeItem("orderList"); // Hapus data dari localStorage
+                    console.log("Isi localStorage setelah dihapus:", localStorage.getItem("orderList")); // Debugging
+                
+                    let orderListContainer = document.getElementById("orderList");
+                    if (orderListContainer) {
+                        orderListContainer.innerHTML = "<li>Belum ada pesanan</li>"; // Kosongkan daftar pesanan
+                    }
+                
+                    let totalPriceElement = document.getElementById("totalPrice");
+                    if (totalPriceElement) {
+                        totalPriceElement.innerText = "Rp 0"; // Reset total harga
+                    }
+                
+                    alert("Pesanan berhasil dihapus!");
+                    location.reload(); // Refresh halaman agar pesanan benar-benar hilang
+                }
+                </script>
+    </div>
+</div>
+
+<script>
+    function showPaymentInfo() {
+        document.getElementById('payment-info').classList.remove('d-none');
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

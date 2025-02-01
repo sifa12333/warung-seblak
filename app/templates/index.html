@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - web PBO</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files dari folder aset statik lokal -->
+<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <!-- =======================================================
+  * Template Name: Yummy
+  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+        <a href="{{ url_for('main.home') }}" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="{{ url_for('static', filename='img/logo.png') }}" alt=""> -->
+
+        <h1 class="sitename">Mangan</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Beranda<br></a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">kontak</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="{{ url_for('main.pesan') }}#book-a-table">Pesanan Saya</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section light-background">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center justify-content-lg-between">
+          <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">Yu Jajan Di<br>Kontrakan Ikan</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Nikmati rasa pedasnya, rasakan kebahagiaannya</p>
+            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+              <a href="{{ url_for('main.pesan') }}#book-a-table" class="btn-get-started">Pesanan Saya</a>
+              <form action="{{ url_for('main.pesan') }}" method="post" role="form">
+            </div>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            <img src="{{ url_for('static', filename='img/hero-img.png') }}" class="img-fluid animated" alt="">
+
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tentang Kami<br></h2>
+        <p><span>Learn More</span> <span class="description-title">About Us</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <img src="{{ url_for('static', filename='img/seblak.webp') }}" class="img-fluid mb-4" alt="">
+            <div class="book-a-table">
+              <h3>Hubungi kami</h3>
+              <p>083822450845</p>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
+            <div class="content ps-0 ps-lg-5">
+              <p>
+                Selamat datang di warung seblak kontrakan ikan, tempat dimana rasa pedas dan lezat bertemu! Kami hadir dengan berbagai pilihan menu yang siap memanjakan lidah Anda. Di sini, Anda bisa menikmati seblak dengan berbagai topping pilihan, seperti tulang, telur, atau topping lainnya yang bisa Anda sesuaikan dengan selera. Tidak hanya seblak, kami juga menyajikan spageti dengan kombinasi topping serupa, memberikan variasi rasa yang tak terlupakan. Tak ketinggalan, kami juga menyediakan aneka minuman segar yang siap menemani hidangan pedas Anda.</p>
+              <p>
+                Kami berkomitmen untuk memberikan pengalaman makan yang berbeda dan menggugah selera, baik untuk penggemar pedas maupun mereka yang ingin mencoba sesuatu yang baru. Terima kasih telah mengunjungi warung seblak kontrakan ikan, kami berharap bisa menjadi tempat favorit Anda!
+              </p>
+
+              <div class="position-relative mt-4">
+                <img src="{{ url_for('static', filename='img/about-2.jpg') }}" class="img-fluid" alt="">
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section dark-background">
+
+        <img src="{{ url_for('static', filename='img/banyak.webp') }}" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Pedas</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Gurih</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Manis</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Enak</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Menu</h2>
+        <p><span class="description-title">Cari menu</span> <span>Yang kamu inginkan</span></p>
+        <h2>Klik Gambar dari menu yang kamu inginkan untuk memesannya. Lalu klik tombol Pesanan Saya diatas untuk melihat daftar pesanan</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+              <h4>Seblak</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+              <h4>Spageti</h4>
+            </a><!-- End tab nav item -->
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
+              <h4>Minuman</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
+              <h4>Menu Lainnya</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="menu-starters">
+
+            <div class="tab-header text-center">
+              <p>Topping</p>
+              <h3>Seblak</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/seblak.jpg" class=""><img src="{{ url_for('static', filename='img/menu/seblak.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Seblak Original</h4>
+                <p class="ingredients">
+                  Seblak tanpa topping
+                </p>
+                <p class="price">
+                  Rp.5000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/seblak_telur.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/seblak_telur.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Seblak Telur</h4>
+                <p class="ingredients">
+                  Dicampur dengan topping telur 
+                </p>
+                <p class="price">
+                  Rp.8000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/seblak_tulang.mebp" class="glightbox"><img src="{{ url_for('static', filename='img/menu/seblak_tulang.webp') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Seblak Tulang</h4>
+                <p class="ingredients">
+                  Ditambah dengan toping tulang
+                </p>
+                <p class="price">
+                  Rp.7.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/seblak-cilok.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/seblak-cilok.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Seblak Cilok</h4>
+                <p class="ingredients">
+                  Ditambahkan dengan si kenyal cilok
+                </p>
+                <p class="price">
+                  Rp.7.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/menu.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/menu.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Request Topping</h4>
+                <p class="ingredients">
+                  sesuaikan dengan keinginan kamu
+                </p>
+              </div><!-- Menu Item -->
+
+            </div>
+          </div><!-- End Starter Menu Content -->
+
+          <div class="tab-pane fade" id="menu-breakfast">
+
+            <div class="tab-header text-center">
+              <p>Topping</p>
+              <h3>Spageti</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/spageti.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/spageti.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Spageti Original</h4>
+                <p class="ingredients">
+                  dijamin isi lebih banyak
+                </p>
+                <p class="price">
+                  Rp.6.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/spatula.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/spatula.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Spageti Tulang</h4>
+                <p class="ingredients">
+                  ditambahkan tulang sebagai topping
+                </p>
+                <p class="price">
+                  Rp.6.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/spageti_cilok.webp" class="glightbox"><img src="{{ url_for('static', filename='img/menu/spageti_cilok.webp') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Spageti Cuanki Lidah + cilok</h4>
+                <p class="ingredients">
+                  Mau yang unik? coba padukan dengan cuanki lidah 
+                </p>
+                <p class="price">
+                  Rp.6.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/spageti_baso.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/spageti_baso.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Spageti Baso</h4>
+                <p class="ingredients">
+                  Mau yang lebih enak lagi? ini ada basonya
+                </p>
+                <p class="price">
+                  Rp.6.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/menu.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/menu.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Request Topping</h4>
+                <p class="ingredients">
+                  sesuaikan dengan keinginan kamu
+                </p>
+              </div><!-- Menu Item -->
+
+            </div>
+          </div><!-- End Breakfast Menu Content -->
+
+          <div class="tab-pane fade" id="menu-lunch">
+
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>Minuman</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/minuman.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/minuman.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Pop Ice</h4>
+                <p class="ingredients">
+                  Tersedia Berbagai Rasa 
+                </p>
+                <p class="price">
+                  Rp. 2.500
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/renceng.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/renceng.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Minuman Renceng</h4>
+                <p class="ingredients">
+                  Tersedia berbagai Rasa yang bisa diseduh
+                </p>
+                <p class="price">
+                  Rp. 1.000
+                </p>
+              </div><!-- Menu Item -->
+
+            </div>
+          </div><!-- End Lunch Menu Content -->
+
+          <div class="tab-pane fade" id="menu-dinner">
+
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>Lainnya</h3>
+            </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/kwetiau.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/kwetiau.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Kwetiau</h4>
+                <p class="ingredients">
+                  Perpaduan bahan dan bumbu yang enak
+                </p>
+                <p class="price">
+                  RP. 8.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/basreng.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/basreng.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Basreng Goreng</h4>
+                <p class="ingredients">
+                  Lorem, deren, trataro, filede, nerada
+                </p>
+                <p class="price">
+                  $14.95
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/cobek.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/cobek.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Basreng Cobek</h4>
+                <p class="ingredients">
+                  basreng yang ditambah bumbu yang enak
+                </p>
+                <p class="price">
+                  Rp. 5.000
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/menu/mie.jpg" class="glightbox"><img src="{{ url_for('static', filename='img/menu/mie.jpg') }}" class="menu-img img-fluid" alt=""></a>
+                <h4>Aneka Mie</h4>
+                <p class="ingredients">
+                  Seduh Mie kesukaanmu
+                </p>
+                <p class="price">
+                  Rp. 5.000
+                </p>
+              </div><!-- Menu Item -->
+
+            </div>
+          </div><!-- End Dinner Menu Content -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Menu Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>TESTIMONI</h2>
+        <p><span class="description-title">Penilaian pelanggan</span>kepada warung kami</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Rasa pedasnya sesuai dengan selera saya, terimakasih</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                      <h3>sansan</h3>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.png') }}" class="img-fluid testimonial-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Topping kali ini saya pakai telur,Next time saya mau coba dengan topping lainnya.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                      <h3>Saraswati</h>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.png') }}" class="img-fluid testimonial-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Kerupukna bisa pilih sendiri sesuai dengan apa yang kita mau, ga pelit isian seblaknya.</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                      <h3>Jeni</h3>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.png') }}" class="img-fluid testimonial-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="row gy-4 justify-content-center">
+                  <div class="col-lg-6">
+                    <div class="testimonial-content">
+                      <p>
+                        <i class="bi bi-quote quote-icon-left"></i>
+                        <span>Kwetiau enak. pesen disini jadi pas ketempat tinggal ambil pesenan dan bayar karena udah beres</span>
+                        <i class="bi bi-quote quote-icon-right"></i>
+                      </p>
+                      <h3>Ramdan</h3>
+                      <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 text-center">
+                    <img src="{{ url_for('static', filename='img/testimonials/testimonials-1.png') }}" class="img-fluid testimonial-img" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Flash Messages Section -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <!-- End of Flash Messages Section -->
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2></h2>
+        <p><span>Mau ambil pesanan?</span> <span class="description-title">Datang kesini</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-5">
+          <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1265.117996902252!2d107.6722120178353!3d-6.9651435930353784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTcnNTQuNSJTIDEwN8KwNDAnMjMuNSJF!5e0!3m2!1sid!2sid!4v1736595451514!5m2!1sid!2sid" frameborder="0" allowfullscreen=""></iframe>
+        </div><!-- End Google Maps -->
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="icon bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Alamat</h3>
+                <p>JL.Cipta Karya II no.24 RT 01 RW 06 kelurahan mekarjaya kecamatan Rancasari kota bandung, jawa barat</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>No Telepon</h3>
+                <p>083822450845</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email</h3>
+                <p>faaa60294@gmail.com</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
+              <i class="icon bi bi-clock flex-shrink-0"></i>
+              <div>
+                <h3>Jam Operasional<br></h3>
+                <p><strong>Buka Setiap Hari : 07.00 - 20.00</strong></p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+          <div class="row gy-4">
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div class="address">
+            <h4>Alamat</h4>
+            <p>JL.Cipta Karya II no.24 RT 01 RW 06 kelurahan mekarjaya kecamatan Rancasari kota bandung, jawa barat</p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Contact</h4>
+            <p>
+              <strong>No Telepon:</strong> <span>083822450845</span><br>
+              <strong>Email:</strong> <span>faaa60294@gmail.com</span><br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Jam Operasional</h4>
+            <p>
+              <strong>Buka Setiap Hari:</strong> <span>07.00 - 20.00</span><br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Mangan.</strong> <span></span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Warung seblak kontrakan ikan
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Main JS File -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".menu-item img").forEach(img => {
+            img.addEventListener("click", function (event) {
+                event.preventDefault(); // Mencegah aksi default (membuka gambar)
+                event.stopImmediatePropagation(); // Hentikan event agar tidak naik ke parent
+    
+                let menuItem = this.closest(".menu-item"); // Cari elemen menu-item terdekat
+                let itemName = menuItem.querySelector("h4").innerText; // Ambil nama menu
+                let itemPrice = menuItem.querySelector(".price").innerText; // Ambil harga menu
+    
+                let order = JSON.parse(localStorage.getItem("orderList")) || [];
+                order.push({ name: itemName, price: itemPrice });
+                localStorage.setItem("orderList", JSON.stringify(order));
+    
+                alert(itemName + " telah ditambahkan ke pesanan!");
+            });
+        });
+    });
+    </script>
+    
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
